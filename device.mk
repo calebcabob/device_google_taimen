@@ -138,4 +138,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 TARGET_SCREEN_HEIGHT := 2880
 TARGET_SCREEN_WIDTH := 1440
 
+# ModemService
+PRODUCT_COPY_FILES += \
+  device/google/taimen/whitelist_modemservice.xml:system/etc/sysconfig/whitelist_modemservice.xml
+
 include device/google/wahoo/device.mk
