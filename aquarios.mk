@@ -12,10 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Include aquarios phone config
-include vendor/aquarios/configs/aquarios_phone.mk
-include vendor/aquarios/products/taimen.mk
-
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
@@ -25,12 +21,6 @@ $(call inherit-product, device/google/taimen/device.mk)
 $(call inherit-product-if-exists, vendor/google_devices/taimen/proprietary/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/google/taimen/taimen-vendor.mk)
 
-# Build with gapps
-$(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
-
 # Audio effects
 PRODUCT_COPY_FILES += \
     device/google/taimen/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
-
-# Include AmbientSense if it's available
--include vendor/ambientmusic/AmbientMusic.mk
