@@ -18,8 +18,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
 # Call some device specific files for taimen
 $(call inherit-product, device/google/taimen/device.mk)
-$(call inherit-product-if-exists, vendor/google_devices/taimen/proprietary/device-vendor.mk)
-$(call inherit-product-if-exists, vendor/google/taimen/taimen-vendor.mk)
+$(call inherit-product, device/google/taimen/self-extractors/root/proprietary/device-vendor.mk)
+$(call inherit-product, vendor/google/taimen/taimen-vendor.mk)
 
 # Audio effects
 PRODUCT_COPY_FILES += \
