@@ -24,3 +24,7 @@ $(call inherit-product, vendor/google/taimen/taimen-vendor.mk)
 # Audio effects
 PRODUCT_COPY_FILES += \
     device/google/taimen/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
+
+# Main Required Packages
+PRODUCT_PACKAGES += \
+    CarrierConfig
