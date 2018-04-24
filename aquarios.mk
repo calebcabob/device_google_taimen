@@ -21,6 +21,12 @@ $(call inherit-product, device/google/taimen/device.mk)
 $(call inherit-product, device/google/taimen/self-extractors/root/proprietary/device-vendor.mk)
 $(call inherit-product, vendor/google/taimen/taimen-vendor.mk)
 
+# Build with gapps
+$(call inherit-product, vendor/pixelgapps/pixel-gapps.mk)
+
+# Include AmbientSense if it's available
+-include vendor/ambientmusic/AmbientMusic.mk
+
 # Audio effects
 PRODUCT_COPY_FILES += \
     device/google/taimen/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
@@ -28,3 +34,7 @@ PRODUCT_COPY_FILES += \
 # Main Required Packages
 PRODUCT_PACKAGES += \
     CarrierConfig
+
+# Permissions
+PRODUCT_PACKAGES += \
+    privapp-permissions-google.xml
